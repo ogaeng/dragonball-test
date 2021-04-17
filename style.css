@@ -8,6 +8,11 @@ body {
 button {
   width: 95%;
   opacity: 0.6;
+  text-align: center;
+}
+
+.share {
+  opacity: 1;
 }
 
 #test {

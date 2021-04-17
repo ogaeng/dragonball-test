@@ -98,7 +98,7 @@ var result = {
   'INTP': {
     'name': '닥터 게로',
     'explain': '크크큭... 이제 남은 에너지는 얼마 없다. 이대로 그냥 죽어버려!',
-    'img': 'intp.jpg'
+    'img': 'char/intp.jpg'
   },
   'ENTJ': {
     'name': '프리저',
@@ -212,3 +212,38 @@ function next() {
     i++;
   }
 }
+
+// 다시 시작하기
+function retry() {
+  location.reload();
+}
+document.querySelector('#retry').addEventListener('click', retry);
+
+// 카카오톡 공유
+  Kakao.init('ab73c8be2bc25ac3e6eafb743f3a053b');
+  // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '나와 어울리는 드래곤볼 캐릭터는?',
+        description: result[mbti]['name'],
+        imageUrl: result[mbti]['img'],
+        link: {
+          mobileWebUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share',
+          webUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share'
+        }
+      },
+      buttons: [
+        {
+          title: '테스트하기',
+          link: {
+            mobileWebUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share',
+            webUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share'
+          }
+        }
+      ]
+    });
+  }
+
+  document.querySelector('#kakao-share').addEventListener('click', sendLink);
