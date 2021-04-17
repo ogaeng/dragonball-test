@@ -59,6 +59,37 @@
 
     <!-- Kakao SDK -->
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript">
+    // 카카오톡 공유
+      Kakao.init('d78218c71a7137710076332db0a06f90');
+      // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+      function sendLink() {
+        var result_name = document.querySelector('#name').textContent;
+        var get_img = document.querySelector('#img').getAttribute('src');
+        var result_img = `https://dbtest.ogaeng.com/${get_img}`;
+        Kakao.Link.sendDefault({
+          objectType: 'feed',
+          content: {
+            title: '나와 어울리는 드래곤볼 캐릭터는?',
+            description: result_name,
+            imageUrl: result_img,
+            link: {
+              mobileWebUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share',
+              webUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share'
+            }
+          },
+          buttons: [
+            {
+              title: '테스트하기',
+              link: {
+                mobileWebUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share',
+                webUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share'
+              }
+            }
+          ]
+        });
+      }
+    </script>
 
     <!-- MBTI Test -->
     <script src="mbti.js"></script>
