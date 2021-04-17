@@ -218,9 +218,10 @@ function retry() {
   location.reload();
 }
 document.querySelector('#retry').addEventListener('click', retry);
+document.querySelector('#kakao-share').addEventListener('click', sendLink);
 
 // 카카오톡 공유
-  Kakao.init('ab73c8be2bc25ac3e6eafb743f3a053b');
+  Kakao.init('d78218c71a7137710076332db0a06f90');
   // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
   function sendLink() {
     var result_name = document.querySelector('#name').textContent;
@@ -248,5 +249,3 @@ document.querySelector('#retry').addEventListener('click', retry);
       ]
     });
   }
-
-  document.querySelector('#kakao-share').addEventListener('click', sendLink);
