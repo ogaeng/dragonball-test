@@ -9,9 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="나와 가장 어울리는 드래곤볼 캐릭터를 알아보자" />
     <meta property="og:image" content="https://dbtest.ogaeng.com/thumb.jpg" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NMDD2GF');</script>
+    <!-- End Google Tag Manager -->
 
   </head>
   <body class="bg-img">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMDD2GF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- 테스트 시작 화면 -->
     <div id="run" class="container">
       <div class="row">
@@ -87,6 +99,10 @@
               }
             }
           ]
+        });
+        dataLayer.push({
+          'event': 'kakao_share',
+          'name': result_name
         });
       }
     </script>

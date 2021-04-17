@@ -203,6 +203,11 @@ function next() {
     document.querySelector('#img').setAttribute('src', result[mbti]['img']);
     document.querySelector('#name').innerHTML = result[mbti]['name'];
     document.querySelector('#explain').innerHTML = result[mbti]['explain'];
+    dataLayer.push({
+      'event': 'result',
+      'name': result[mbti]['name'],
+      'mbti': mbti
+    });
   } else {
     document.querySelector('#title-num').innerHTML = testNum[i]['title-num'];
     document.querySelector('#title').innerHTML = testNum[i]['title'];
@@ -210,11 +215,18 @@ function next() {
     document.querySelector('#A').innerHTML = testNum[i]['A'];
     document.querySelector('#B').innerHTML = testNum[i]['B'];
     i++;
+    dataLayer.push({
+      'event': 'view_question',
+      'num': i
+    });
   }
 }
 
 // 다시 시작하기
 function retry() {
+  dataLayer.push({
+    'event': 'retry'
+  });
   location.reload();
 }
 document.querySelector('#retry').addEventListener('click', retry);
