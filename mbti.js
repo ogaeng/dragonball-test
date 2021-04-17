@@ -223,12 +223,15 @@ document.querySelector('#retry').addEventListener('click', retry);
   Kakao.init('ab73c8be2bc25ac3e6eafb743f3a053b');
   // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
   function sendLink() {
+    var result_name = document.querySelector('#name').textContent;
+    var get_img = document.querySelector('#img').getAttribute('src');
+    var result_img = `https://dbtest.ogaeng.com/${get_img}`;
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
         title: '나와 어울리는 드래곤볼 캐릭터는?',
-        description: result[mbti]['name'],
-        imageUrl: result[mbti]['img'],
+        description: result_name,
+        imageUrl: result_img,
         link: {
           mobileWebUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share',
           webUrl: 'https://dbtest.ogaeng.com/?utm_source=kakaotalk&utm_medium=social&utm_campaign=social_share'
