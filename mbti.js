@@ -214,11 +214,11 @@ function next() {
     document.querySelector('#type').value = testNum[i]['type'];
     document.querySelector('#A').innerHTML = testNum[i]['A'];
     document.querySelector('#B').innerHTML = testNum[i]['B'];
-    i++;
     dataLayer.push({
       'event': 'view_question',
       'num': i
     });
+    i++;
   }
 }
 
